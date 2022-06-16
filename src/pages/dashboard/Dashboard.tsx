@@ -1,9 +1,8 @@
-import { DesktopNavbar } from "../../components"
+import { PageLayout } from "../../components"
 
 export const Dashboard = () => {
     return(
-        <>
-            <DesktopNavbar />
-        </>
+        <PageLayout>            
+        </PageLayout>
     )
 }

@@ -1,18 +1,26 @@
-export const sidebar_links = [    
+import { MdDashboard } from 'react-icons/md';
+import { AiFillPieChart } from 'react-icons/ai';
+import { BsArrowLeftRight, BsFillCreditCardFill } from 'react-icons/bs';
+
+export const sidebar_links = [ 
     {
-        name: "",
-        path: ""
+        icon: <MdDashboard />,
+        name: "Dashboard",
+        path: "/dashboard"
+    }, 
+    {
+        icon: <BsArrowLeftRight />,
+        name: "Transaction",
+        path: "/transaction"
     },
     {
-        name: "",
-        path: ""
-    },
+        icon: <AiFillPieChart />,
+        name: "Analysis",
+        path: "/analysis"
+    },  
     {
-        name: "",
-        path: ""
-    },
-    {
-        name: "",
-        path: ""
+        icon: <BsFillCreditCardFill />,
+        name: "Cards",
+        path: "/cards"
     },
 ]
