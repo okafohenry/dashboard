@@ -1,19 +1,24 @@
 import styled from 'styled-components';
+import { CurrencyFormatter } from '../utils/currencyFormatter';
 
 const Wrapper = styled.div`
-    width: 100%;
     background: #fff;
     display: flexbox;
-    justify-content: space-around;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 10px 20px 10px 5px;
 
     .icon{
-        padding: 30px;
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        text-align: center;
         border-radius: 5px;
         font-size: 20px;
+        line-height: 50px;
     }
     .texts{
         display: grid;
-        gap: 10px;
         h3{            
             font-weight: 400;
             font-size: 20px;
@@ -21,23 +26,23 @@ const Wrapper = styled.div`
             color: #656565;
         }
         p {
-            font-weight: 900;
+            font-weight: 700;
             font-size: 32px;
-            line-height: 44px;
+            line-height: 32px;
             color: #222222;
         }
     }
 `;
 
 export const Card = (props: any) => {
-    const {icon, headerText, amount} = props;
+    const {icon, headerText, amount, backgroundColor, color} = props;
 
     return(
         <Wrapper>
-            <div className='icon'>{icon}</div>
+            <div className='icon' style={{backgroundColor: backgroundColor, color: color}}>{icon}</div>
             <div className='texts'>
                 <h3>{headerText}</h3>
-                <p>{amount}</p>
+                <p>{CurrencyFormatter.format(amount).replace(/(\.|,)00$/g, '')}</p>
             </div>
         </Wrapper>
     )

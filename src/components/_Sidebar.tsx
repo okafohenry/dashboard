@@ -1,11 +1,11 @@
 import { MemoryRouter as Router, Link } from 'react-router-dom';
-import { sidebar_links } from "../utils";
+import { sidebar_links } from "../utils/data";
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
     background: #FFF;
     width: 15%;
-    height: 74vh;
+    height: 88vh;
     padding: 50px 20px;
     position: relative;
     top: 4.89rem;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
         display: flexbox;
         gap: 10px;
         color: var(--primary-gray);
-        letter-spacing: .3px;
+        letter-spacing: .5px;
         font-weight: 600;
 
         &:hover{
@@ -28,6 +28,10 @@ const Wrapper = styled.div`
 
         .icon {
             font-size: 20px;
+        }
+        .name {
+            font-size: 18px;
+            line-height: 32px;
         }
     }
 `;

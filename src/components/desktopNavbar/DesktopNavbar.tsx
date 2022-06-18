@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
         .notification {
             font-size: 25px;
-            line-height: 45px;
+            line-height: 40px;
         }
 
         .avatar__container {
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
                 width: 40px;
                 height: 40px;
                 border-radius: 100%;
-                background: blue;
+                background: var(--light-gray);
             }
             p {
                 line-height: 40px;
