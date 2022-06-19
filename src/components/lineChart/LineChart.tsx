@@ -25,9 +25,14 @@ ChartJS.register(
 
   const options = {
     responsive: true,
+    elements: {
+      point:{
+          radius: 0
+      }
+   },
     plugins: {
       legend: {
-        position: 'top' as const,
+        display: false
       },
       title: {
         display: false,
@@ -36,14 +41,14 @@ ChartJS.register(
     },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 const data = {
     labels,
     datasets: [
       {
         label: 'Income',
         fill: true,
-        lineTension: '.25',
+        lineTension: '.3',
         borderColor: '#068374',
         backgroundColor: 'rgba(6, 131, 116, 0.05)',
         borderWidth: 2,
@@ -52,7 +57,7 @@ const data = {
       {
         label: 'Expenses',       
         fill: false,
-        lineTension: '.25',
+        lineTension: '.3',
         borderColor: 'rgba(223, 224, 235, 1)',
         backgroundColor: 'rgba(223, 224, 235, 1)',
         borderWidth: 2,

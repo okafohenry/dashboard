@@ -1,13 +1,16 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { IoEllipsisVerticalSharp } from 'react-icons/io5';
+import { AiOutlinePlus } from 'react-icons/ai';
 // import styled from 'styled-components';
-import { Card, LineChart, PageLayout } from "../../components"
-import { dashboard_sections } from '../../utils/data';
-import { ChartSection, Wrapper } from "./DashboardStyle";
-
-
+import { AtmCard, Card, LineChart, PageLayout } from "../../components"
+import { CurrencyFormatter } from "../../utils/currencyFormatter";
+import { dashboard_sections, card_balance } from '../../utils/data';
+import { ChartSection, Wrapper, AtmSection } from "./DashboardStyle";
 
 
 export const Dashboard = () => {
+
+
     return(
         <PageLayout> 
             <Wrapper>
@@ -31,11 +34,11 @@ export const Dashboard = () => {
                                     <h3>Dashboard</h3>
                                     <div className="radio-btns">
                                         <div className="income-radio">
-                                            <input type="radio" id="income" />
+                                            <div></div>
                                             <label htmlFor="income">Income</label>
                                         </div>
                                         <div className="expense-radio">
-                                            <input type="radio" id="expense" />
+                                            <div></div>
                                             <label htmlFor="expense">Expenses</label>
                                         </div>
                                     </div>
@@ -45,7 +48,24 @@ export const Dashboard = () => {
                                 </div>
                             </ChartSection>
                         </Col>
-                        <Col sm>cards</Col>
+                        <Col sm>
+                            <AtmSection>
+                                <header>
+                                    <h3>Cards</h3>
+                                    <IoEllipsisVerticalSharp />
+                                </header>
+                                <AtmCard />
+                                <div className='card-balance'>
+                                    <p className="balance-title">Card balance</p>
+                                    <p className="balance-amount">{CurrencyFormatter.format(card_balance.balance).replace(/(\.|,)00$/g, '')}</p>
+                                </div>
+                                <div className='credit-limit'>
+                                    <p className='limit-title'>Credit limit</p>
+                                    <p className="limit-amount">{CurrencyFormatter.format(200000).replace(/(\.|,)00$/g, '')}</p>
+                                </div>
+                                <button className="add-card__button"><AiOutlinePlus /> Add new card</button>
+                            </AtmSection>
+                        </Col>
                     </Row>
                 </Container>
             </Wrapper>   

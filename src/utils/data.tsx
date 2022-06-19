@@ -62,7 +62,9 @@ export const dashboard_sections = {
 }
 
 
-
+export const card_balance = {
+    balance: 110000
+}
 
 
 
