@@ -99,7 +99,9 @@ export const AtmSection = styled.div`
     }
     .add-card__button {
         width: 100%;
-        border-radius: 12px;
+        padding: 12.5px 0;
+        border: none;
+        border-radius: 8px;
         text-align: center;
     }
 `
