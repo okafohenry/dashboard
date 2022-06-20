@@ -7,6 +7,7 @@ const Wrapper = styled.div`
     gap: 10px;
     border-radius: 5px;
     padding: 10px 20px 10px 5px;
+    margin-top: 10px;
 
     .icon{
         width: 60px;

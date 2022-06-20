@@ -3,6 +3,10 @@ import { AiFillPieChart } from 'react-icons/ai';
 import { BsArrowLeftRight, BsFillCreditCardFill } from 'react-icons/bs';
 import { IoPaperPlane } from 'react-icons/io5';
 import { GiReceiveMoney } from 'react-icons/gi';
+import netflix from "../assets/images/netflix.png";
+import figma from "../assets/images/figma.png";
+import user from "../assets/images/user.png"
+
 
 export const sidebar_links = [ 
     {
@@ -66,6 +70,33 @@ export const card_balance = {
     balance: 110000
 }
 
+
+
+const todaysDate = new Date(Date.now()).toLocaleString().split(', ')[0];
+
+export const transactions = [
+    {
+        avatar: netflix,
+        transaction_name: "Netflix Subscription",
+        transaction_date: todaysDate,
+        transaction_amount: 1200,
+        transaction_status: "pending"
+    },
+    {
+        avatar: netflix,
+        transaction_name: "Figjam Subscription",
+        transaction_date: todaysDate,
+        transaction_amount: 1200,
+        transaction_status: "success"
+    },
+    {
+        avatar: user,
+        transaction_name: 'Sent to Alex',
+        transaction_date: todaysDate,
+        transaction_amount: 1200,
+        transaction_status: "success"
+    },
+]
 
 
 

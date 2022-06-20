@@ -2,10 +2,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import { IoEllipsisVerticalSharp } from 'react-icons/io5';
 import { AiOutlinePlus } from 'react-icons/ai';
 // import styled from 'styled-components';
-import { AtmCard, Card, LineChart, PageLayout } from "../../components"
+import { AtmCard, Card, LineChart, PageLayout, Table } from "../../components";
 import { CurrencyFormatter } from "../../utils/currencyFormatter";
-import { dashboard_sections, card_balance } from '../../utils/data';
-import { ChartSection, Wrapper, AtmSection } from "./DashboardStyle";
+import { dashboard_sections, card_balance, transactions } from '../../utils/data';
+import { ChartSection, Wrapper, AtmSection, TransactionSection } from "./DashboardStyle";
 
 
 export const Dashboard = () => {
@@ -17,7 +17,7 @@ export const Dashboard = () => {
                 <Container>
                     <Row>
                     {dashboard_sections.section_one.map((item: any, index: any) => (
-                        <Col key={index}>
+                        <Col key={index} sm>
                             <Card 
                                 color={item.color}
                                 backgroundColor={item.backgroundColor}
@@ -43,7 +43,7 @@ export const Dashboard = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div className="chart_container">
                                     <LineChart />                                  
                                 </div>
                             </ChartSection>
@@ -63,9 +63,23 @@ export const Dashboard = () => {
                                     <p className='limit-title'>Credit limit</p>
                                     <p className="limit-amount">{CurrencyFormatter.format(200000).replace(/(\.|,)00$/g, '')}</p>
                                 </div>
-                                <button className="add-card__button"><AiOutlinePlus /> Add new card</button>
+                                <button className="add-card__button"><AiOutlinePlus />  Add new card</button>
                             </AtmSection>
                         </Col>
+                    </Row>
+                    <Row className="transactions-section">
+                        <Col lg={9} sm>
+                            <TransactionSection>
+                                <header className="transaction__header">
+                                    <h3>Recent Transactions</h3>
+                                    <a href='#'>View all</a>
+                                </header>
+                                <div className="transaction__body">
+                                   { transactions ? <Table transactions={transactions} /> : <div className="no-transaction">No available transactions</div>}
+                                </div>
+                            </TransactionSection>
+                        </Col>
+                        <Col></Col>
                     </Row>
                 </Container>
             </Wrapper>   

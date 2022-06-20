@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
         width: 3px;
     }
 
-    .charts-section {
+    .charts-section, .transactions-section {
         margin-top: 3rem;
     }
 `;
@@ -61,6 +61,10 @@ export const ChartSection = styled.div`
             }
         }
     }
+    .chart_container {
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 export const AtmSection = styled.div`
@@ -104,4 +108,34 @@ export const AtmSection = styled.div`
         border-radius: 8px;
         text-align: center;
     }
-`
+`;
+
+export const TransactionSection = styled.div`
+    background: #fff;
+    padding: 1.5rem;
+    display: grid;
+
+    .transaction__header {
+        display: flexbox;
+        justify-contents: space-between;
+
+        a {
+            text-decoration: none;
+            padding: 8px 16px;
+            background: #F8F8F8;
+            border-radius: 8px;                
+            font-size: 16px;
+            line-height: 35px;
+            color: #333333;
+        }
+    }
+
+    .transaction__body {  
+        width: 100%;
+        overflow-x: auto;
+        :-webkit-scrollbar {
+            width: 3px;
+        }
+
+    }
+`;

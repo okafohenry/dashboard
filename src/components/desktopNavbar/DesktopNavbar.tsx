@@ -8,6 +8,7 @@ const Wrapper = styled.div`
     padding: 1rem 0 1rem 3rem;
     position: fixed;
     top: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 0px 20px rgba(7, 59, 76, 0.05);
