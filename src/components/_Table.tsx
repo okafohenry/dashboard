@@ -67,21 +67,25 @@ export const Table = ({transactions}: any) => {
                 </tr>
                 
                 <tbody>
-                    {transactions.map((transaction: any, index: number) => (
-                        <tr key={index} className="transactions">
-                            <td className="recipient">
-                                <div className="avatar">
-                                    <img src={transaction.avatar} alt={transaction.transaction_name} />
-                                </div>
-                                <div className="name">{transaction.transaction_name}</div>
-                            </td>
-                            <td>{transaction.transaction_date}</td>
-                            <td>{transaction.transaction_amount}</td>
-                            <td className="status">
-                                <div className={transaction.transaction_status==="success"? "success": transaction.transaction_status==="pending"? "pending" : "failed"}>{transaction.transaction_status}</div>
-                            </td>
-                        </tr>
-                    ))}
+                    {transactions.map((transaction: any, index: number) => { 
+                    if(index < 3){ 
+                        return( 
+                            <tr key={index} className="transactions">
+                                <td className="recipient">
+                                    <div className="avatar">
+                                        <img src={transaction.avatar} alt={transaction.transaction_name} />
+                                    </div>
+                                    <div className="name">{transaction.transaction_name}</div>
+                                </td>
+                                <td>{transaction.transaction_date}</td>
+                                <td>{transaction.transaction_amount}</td>
+                                <td className="status">
+                                    <div className={transaction.transaction_status==="success"? "success": transaction.transaction_status==="pending"? "pending" : "failed"}>{transaction.transaction_status}</div>
+                                </td>
+                            </tr>
+                        )
+                    }
+                })}
                 </tbody>
             </table>
         </Wrapper>

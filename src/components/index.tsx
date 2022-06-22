@@ -6,3 +6,5 @@ export * from './_Card';
 export * from './_LineChart';
 export * from './_AtmCard';
 export * from './_Table';
+export * from './_Button';
+export * from './_Input';

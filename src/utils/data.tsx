@@ -96,6 +96,13 @@ export const transactions = [
         transaction_amount: 1200,
         transaction_status: "success"
     },
+    {
+        avatar: user,
+        transaction_name: 'Sent to Alex',
+        transaction_date: todaysDate,
+        transaction_amount: 1200,
+        transaction_status: "success"
+    }
 ]
 
 

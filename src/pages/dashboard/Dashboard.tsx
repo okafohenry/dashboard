@@ -1,12 +1,11 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, InputGroup } from "react-bootstrap";
 import { IoEllipsisVerticalSharp } from 'react-icons/io5';
 import { AiOutlinePlus } from 'react-icons/ai';
-// import styled from 'styled-components';
-import { AtmCard, Card, LineChart, PageLayout, Table } from "../../components";
+import { FaUser } from "react-icons/fa";
+import { AtmCard, Button, Card, Input, LineChart, PageLayout, Table } from "../../components";
 import { CurrencyFormatter } from "../../utils/currencyFormatter";
 import { dashboard_sections, card_balance, transactions, transfer_beneficiaries } from '../../utils/data';
 import { ChartSection, Wrapper, AtmSection, TransactionSection, QuickTransferSection } from "./DashboardStyle";
-import { FaUser } from "react-icons/fa";
 
 
 export const Dashboard = () => {
@@ -64,7 +63,9 @@ export const Dashboard = () => {
                                     <p className='limit-title'>Credit limit</p>
                                     <p className="limit-amount">{CurrencyFormatter.format(200000).replace(/(\.|,)00$/g, '')}</p>
                                 </div>
-                                <button className="add-card__button"><AiOutlinePlus />  Add new card</button>
+                                <Button 
+                                    buttonStyle={{width:'100%', padding: '12.5px 0', border: 'none', borderRadius: '8px', textAlign: 'center'}}
+                                    text={<><AiOutlinePlus />  Add new card</>} />
                             </AtmSection>
                         </Col>
                     </Row>
@@ -103,8 +104,18 @@ export const Dashboard = () => {
                                     })}
                                     </div>
                                 </div>
-                            </QuickTransferSection>
-                            
+                                <div>
+                                    <Input 
+                                        placeholder="Enter Amount"  
+                                        inputStyle={{width: '100%', marginTop: '25px', padding: '10px 15px', background: '#F4F4F4', border: 'none', borderRadius: '8px', fontSize:'14px' }}/>
+                                </div>
+                                <div>
+                                    <Button 
+                                        text="Send Money"
+                                        buttonStyle={{width: '100%', marginTop: '20px', color: '#fff', background: '#068374', borderRadius: '8px', border: 'none', textAlign: 'center', padding: '10px 0', fontSize: '15px'}} />
+                                </div>
+                                
+                            </QuickTransferSection>                            
                         </Col>
                     </Row>
                 </Container>

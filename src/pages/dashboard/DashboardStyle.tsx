@@ -101,13 +101,6 @@ export const AtmSection = styled.div`
             font-weight: 600;
         }
     }
-    .add-card__button {
-        width: 100%;
-        padding: 12.5px 0;
-        border: none;
-        border-radius: 8px;
-        text-align: center;
-    }
 `;
 
 export const TransactionSection = styled.div`
@@ -142,12 +135,12 @@ export const TransactionSection = styled.div`
 
 export const QuickTransferSection = styled.div`
     background: #fff;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem 3.5rem 1.5rem;
     display: grid;
     header {
         h3{
             font-weight: 700;
-            font-size: 24px;
+            font-size: 22px;
             line-height: 32.78px;
         }
     }
