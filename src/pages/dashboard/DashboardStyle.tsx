@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 84%;
-    height: 83vh;
+    height: 85vh;
     margin: 0 auto;
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 3rem;
     position: relative;
-    top: -32.3rem;
-    right: -6.4rem;
-    overflow-y: scroll;
+    top: -540px;
+    right: -6.5rem;
+    overflow-y: auto;
     ::-webkit-scrollbar {
         width: 3px;
     }
@@ -137,5 +137,59 @@ export const TransactionSection = styled.div`
             width: 3px;
         }
 
+    }
+`;
+
+export const QuickTransferSection = styled.div`
+    background: #fff;
+    padding: 1rem 1.5rem;
+    display: grid;
+    header {
+        h3{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32.78px;
+        }
+    }
+
+    .tr-beneficiaries__body{
+        display: flexbox;
+        margin-top: 25px;
+        justify-content: space-between;
+        a {
+            text-decoration: none;
+        }        
+
+        .user-placeholder {
+            height: 30px;
+            width: 30px;
+            margin: 0 auto;
+            border-radius: 50%;
+            text-align: center;
+            background: #EBEBEB;
+            color: var(--primary-color);
+        }
+        .add {
+            font-size: 13px;
+            margin-left: 5px;
+        }
+    
+        .beneficiaries {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .beneficiary {
+                .img{
+                    width: 30px;
+                    height: 30px;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                }
+                display: grid;
+                font-size: 13px;
+                align-text: left;
+            }
+        }
     }
 `;

@@ -99,6 +99,25 @@ export const transactions = [
 ]
 
 
+export const transfer_beneficiaries = [
+    {
+        avatar: user,
+        name: 'Esther Okafor'
+    },
+    {
+        avatar: user,
+        name: 'Savannah Henry'
+    },
+    {
+        avatar: user,
+        name: 'Mckenny Henry'
+    },
+    {
+        avatar: user,
+        name: 'Okafor Henry'
+    }
+]
+
 
 
 

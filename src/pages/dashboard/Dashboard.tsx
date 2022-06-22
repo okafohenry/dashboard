@@ -4,8 +4,9 @@ import { AiOutlinePlus } from 'react-icons/ai';
 // import styled from 'styled-components';
 import { AtmCard, Card, LineChart, PageLayout, Table } from "../../components";
 import { CurrencyFormatter } from "../../utils/currencyFormatter";
-import { dashboard_sections, card_balance, transactions } from '../../utils/data';
-import { ChartSection, Wrapper, AtmSection, TransactionSection } from "./DashboardStyle";
+import { dashboard_sections, card_balance, transactions, transfer_beneficiaries } from '../../utils/data';
+import { ChartSection, Wrapper, AtmSection, TransactionSection, QuickTransferSection } from "./DashboardStyle";
+import { FaUser } from "react-icons/fa";
 
 
 export const Dashboard = () => {
@@ -79,7 +80,32 @@ export const Dashboard = () => {
                                 </div>
                             </TransactionSection>
                         </Col>
-                        <Col></Col>
+                        <Col>
+                            <QuickTransferSection>
+                                <header>
+                                    <h3>Quick Transfer</h3>
+                                </header>
+                                <div className="tr-beneficiaries__body">
+                                    <a href="#" className="">
+                                        <div className="user-placeholder"><FaUser/></div>
+                                        <div className="add">Add</div>
+                                    </a>
+                                    <div className="beneficiaries">
+                                    {transfer_beneficiaries.map((benefactor: any, index: number) => {
+                                        if(index < 3){
+                                            return( 
+                                                <a href="#" className="beneficiary" key={index}>
+                                                    <div className="img"><img src={benefactor.avatar} alt={benefactor.name} height="30px" width="30px" /></div>
+                                                    <div>{benefactor.name.split(' ').splice(0, 1)}</div>
+                                                </a>
+                                            )
+                                        }
+                                    })}
+                                    </div>
+                                </div>
+                            </QuickTransferSection>
+                            
+                        </Col>
                     </Row>
                 </Container>
             </Wrapper>   
