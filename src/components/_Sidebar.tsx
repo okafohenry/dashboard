@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MemoryRouter as Router, Link } from 'react-router-dom';
 import { sidebar_links } from "../utils/data";
 import styled from 'styled-components';
@@ -34,20 +35,30 @@ const Wrapper = styled.div`
             line-height: 32px;
         }
     }
+    
+    .active {
+        color: var(--primary-color);
+        background: var(--light-gray);
+    }
+
+    @media and (max-width: 700px) {
+        display: none;
+    }
 `;
 
-export const SideBar = () => {
+export const SideBar = () => { 
+    const [activeMenu, setActiveMenu] = useState();   
     return(
         <>
             <Wrapper>
-                <Router>
+                <>
                     {sidebar_links.map((sidebar_link: any, index: any) => (
-                        <Link to={sidebar_link.path} key={index}>
+                        <Link to={sidebar_link.path} key={index}  className={activeMenu === sidebar_link.name ? 'active' : ""} onClick={() => setActiveMenu(sidebar_link.name)}>
                             <div className='icon'>{sidebar_link.icon}</div>
                             <div className='name'>{sidebar_link.name}</div>
                         </Link>
                     ))}
-                </Router>
+                </>
             </Wrapper>
         </>
     )

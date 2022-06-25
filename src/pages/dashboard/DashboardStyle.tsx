@@ -13,10 +13,10 @@ export const Wrapper = styled.div`
     ::-webkit-scrollbar {
         width: 3px;
     }
-
     .charts-section, .transactions-section {
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
+    
 `;
 
 export const ChartSection = styled.div`

@@ -1,4 +1,4 @@
-import { Container, Row, Col, InputGroup } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { IoEllipsisVerticalSharp } from 'react-icons/io5';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { FaUser } from "react-icons/fa";
@@ -15,7 +15,7 @@ export const Dashboard = () => {
         <PageLayout> 
             <Wrapper>
                 <Container>
-                    <Row>
+                    <Row className="financial_statistics-section">
                     {dashboard_sections.section_one.map((item: any, index: any) => (
                         <Col key={index} sm>
                             <Card 

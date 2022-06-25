@@ -3,6 +3,7 @@ import { CurrencyFormatter } from '../utils/currencyFormatter';
 
 const Wrapper = styled.div`
     background: #fff;
+    height: 100px;
     display: flexbox;
     gap: 10px;
     border-radius: 5px;
