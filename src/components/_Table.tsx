@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { CurrencyFormatter } from "../utils/currencyFormatter";
 
 const Wrapper = styled.div`
     table {
@@ -12,13 +13,15 @@ const Wrapper = styled.div`
         }
         .status {
             display: flex;
-            justify-content: flex-end;
-            width: 2.5rem;
+            justify-content: center;
         }
         tbody{ 
             tr{ 
                 td {
-                    padding: 7px 0;
+                    padding: 7px;
+                    overflow: auto;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
                 .recipient {
                     display: flexbox;
@@ -48,7 +51,11 @@ const Wrapper = styled.div`
                     font-size: 14px;
                 }
                 .failed {
-
+                    padding: 3px 16px;
+                    color: red;
+                    background: pink;
+                    border-radius: 24px;
+                    font-size: 14px;
                 }
             }
         }
@@ -78,7 +85,7 @@ export const Table = ({transactions}: any) => {
                                     <div className="name">{transaction.transaction_name}</div>
                                 </td>
                                 <td>{transaction.transaction_date}</td>
-                                <td>{transaction.transaction_amount}</td>
+                                <td>{CurrencyFormatter.format(transaction.transaction_amount).replace(/(\.|,)00$/g, '')}</td>
                                 <td className="status">
                                     <div className={transaction.transaction_status==="success"? "success": transaction.transaction_status==="pending"? "pending" : "failed"}>{transaction.transaction_status}</div>
                                 </td>

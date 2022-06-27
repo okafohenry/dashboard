@@ -5,6 +5,11 @@ import { SideBar } from "./_Sidebar";
 const Wrapper = styled.div`
     background: var(--light-gray);
     height: 100vh;
+
+    @media (max-width: 1020px) {
+        width: 100%;
+        height: 100vh;
+    }
 `;
 
 export const PageLayout = ({children}: any) => {

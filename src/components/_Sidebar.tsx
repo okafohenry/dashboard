@@ -41,7 +41,7 @@ const Wrapper = styled.div`
         background: var(--light-gray);
     }
 
-    @media and (max-width: 700px) {
+    @media (max-width: 1020px) {
         display: none;
     }
 `;

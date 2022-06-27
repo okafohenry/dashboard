@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import { CurrencyFormatter } from '../utils/currencyFormatter';
 
 const Wrapper = styled.div`
+    min-width: 300px;
     background: #fff;
     height: 100px;
     display: flexbox;
+    flex-grow: 1;
     gap: 10px;
     border-radius: 5px;
     padding: 10px 20px 10px 5px;
@@ -33,6 +35,11 @@ const Wrapper = styled.div`
             line-height: 32px;
             color: #222222;
         }
+    }
+    @media (max-width: 1020px){
+        padding: 10px 50px 10px 30px;
+        width: 85%;
+        margin: 10px auto;
     }
 `;
 

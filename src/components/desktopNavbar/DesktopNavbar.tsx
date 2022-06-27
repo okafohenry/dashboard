@@ -1,6 +1,9 @@
 import Logo from '../../assets/images/logo.svg';
-import {FaBell} from 'react-icons/fa';
+import {FaBars, FaBell} from 'react-icons/fa';
+import { IoClose } from 'react-icons/io5';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
+import { useState } from 'react';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -36,25 +39,63 @@ const Wrapper = styled.div`
                 line-height: 40px;
             }
         }
+        .fa-bars {
+            color: var(--primary-color);
+            font-size: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+        .fa-close {
+            color: var(--primary-color);
+            font-size: 25px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        @media (max-width: 1020px){
+            margin-right: 2rem;
+        }
     }
-`
+`;
+
+
 
 export const DesktopNavbar = () => {
+    const [sideNavDisplay, setSideNavDisplay] = useState(false);
+
+    const isMobile = useMediaQuery({
+        query: "(max-width: 1020px)"
+    });
+
+    const handleSideNavDisplay = () => {
+        setSideNavDisplay(true);
+    }
+    const handleSideNavClose = () => {
+        setSideNavDisplay(false);
+    }
+
     return(
         <Wrapper>
             <div>
                 <img src={Logo} alt="bankly" />
             </div>
-            <div className="notification-avatar__container"> 
-                <div className='notification'>
-                    <FaBell />
-                </div>         
-                <div className='avatar__container'>
-                    <div>
-                        <img src="" alt="" />
-                    </div>
-                    <p>User Name</p>
-                </div>
+            <div className="notification-avatar__container">      
+                { !isMobile ? 
+                    <>
+                        <div className='notification'>
+                            <FaBell />
+                        </div>  
+                        <div className='avatar__container'>
+                            <div>
+                                <img src="" alt="" />
+                            </div>
+                            <p>User Name</p>
+                        </div>
+                    </> :
+                    <>
+                    {sideNavDisplay ? 
+                       <div className="fa-close" onClick={handleSideNavClose}><IoClose /></div> : <div className="fa-bars" onClick={handleSideNavDisplay}><FaBars /></div>
+                    }
+                    </>
+                }
             </div>
         </Wrapper>
     )
