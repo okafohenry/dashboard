@@ -12,20 +12,21 @@ const Wrapper = styled.div`
     }
 `;
 
-export const PageLayout = ({children}: any) => {
+export const PageLayout = ({active, children}: any) => {
     return(
         <Wrapper>
-            <Layout /> 
+            <Layout active={active} /> 
             {children}
         </Wrapper>
     )
 }
 
-const Layout = () => {
+const Layout = (props: any) => {
+    const {active} = props;
     return(
         <>
             <DesktopNavbar />
-            <SideBar />  
+            <SideBar active={active} />  
         </>
     )
 }

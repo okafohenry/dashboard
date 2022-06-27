@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBCarouselElement,  } from 'mdb-react-ui-kit';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -69,25 +70,62 @@ const Wrapper = styled.div`
     }
 `;
 
-const card_details = {
-    number: '3532 3262 8697 0329',
-    owner: 'daramola olalekan',
-    valid_date: '03/24'
+const card_details = [
+    {
+        number: '3532 3262 8697 0329',
+        owner: 'daramola olalekan',
+        valid_date: '03/24',
+        bank: 'access',
+        active: 'active'
+    },
+    {
+        number: '3532 3262 8697 0329',
+        owner: 'okafor henry',
+        valid_date: '15/22',
+        bank: 'gtb'
+    },
+    {
+        number: '3532 3262 8697 0329',
+        owner: 'Favour james',
+        valid_date: '01/27',
+        bank: 'first'
+    }
+]
+
+
+      
+  
+
+export const AtmCardCarousel = () => {
+    return(        
+        <Wrapper>            
+            <MDBCarousel showIndicators showControls>
+                <MDBCarouselInner>
+                    {card_details.map((item: any, index: number) => (
+                        <MDBCarouselItem className={item.active? 'active': ''}  key={index} id={index}>
+                            <AtmCard cardNumber={item.number} cardOwner={item.owner} validDate={item.valid_date} cardIssuer={item.bank} />
+                        </MDBCarouselItem> 
+                    ))}
+                </MDBCarouselInner>
+            </MDBCarousel>
+        </Wrapper>
+    )
 }
 
-export const AtmCard = () => {
+const AtmCard = (props: any) => {
+    const {cardNumber, cardOwner, validDate} = props;
     return(
-        <Wrapper>
+        <>
             <p className="debit__text">Debit</p>
             <div className="card-details">
-                <p className="card-number">{card_details.number.replace(/\d(?=.*\d(?:\s*\d){3}\s*$)/g, '*')}</p> {/* replace all characters except whitespace and last 4 characters with asterisk */}
-                <p className="card-owner">{card_details.owner}</p>
+                <p className="card-number">{cardNumber.replace(/\d(?=.*\d(?:\s*\d){3}\s*$)/g, '*')}</p> {/* replace all characters except whitespace and last 4 characters with asterisk */}
+                <p className="card-owner">{cardOwner}</p>
                 <div className="validation__section">
                     <div className="valid-date">
                         <div>   
                             <p className="valid">VALID</p><p className="thru">THRU</p>
                         </div>
-                        <p>{card_details.valid_date}</p>
+                        <p>{validDate}</p>
                     </div>
                     <div className="card-symbols">
                         <div className="red"></div>
@@ -95,6 +133,6 @@ export const AtmCard = () => {
                     </div>
                 </div>
             </div>
-        </Wrapper>
+        </>
     )
 }

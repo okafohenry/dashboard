@@ -2,17 +2,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import { IoEllipsisVerticalSharp } from 'react-icons/io5';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { FaUser } from "react-icons/fa";
-import { AtmCard, Button, Card, Input, LineChart, PageLayout, Table } from "../../components";
+import { AtmCardCarousel, Button, Card, Input, LineChart, PageLayout, Table } from "../../components";
 import { CurrencyFormatter } from "../../utils/currencyFormatter";
 import { dashboard_sections, card_balance, transactions, transfer_beneficiaries } from '../../utils/data';
 import { ChartSection, Wrapper, AtmSection, TransactionSection, QuickTransferSection } from "./DashboardStyle";
 
 
 export const Dashboard = () => {
-
-
     return(
-        <PageLayout> 
+        <PageLayout active="dashboard"> 
             <Wrapper>
                 <Container>
                     <Row className="financial_statistics-section">
@@ -54,7 +52,7 @@ export const Dashboard = () => {
                                     <h3>Cards</h3>
                                     <IoEllipsisVerticalSharp />
                                 </header>
-                                <AtmCard />
+                                <AtmCardCarousel />
                                 <div className='card-balance'>
                                     <p className="balance-title">Card balance</p>
                                     <p className="balance-amount">{CurrencyFormatter.format(card_balance.balance).replace(/(\.|,)00$/g, '')}</p>

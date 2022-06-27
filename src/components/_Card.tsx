@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { CurrencyFormatter } from '../utils/currencyFormatter';
 
 const Wrapper = styled.div`
-    min-width: 300px;
+    // min-width: 300px;
     background: #fff;
     height: 100px;
     display: flexbox;
@@ -39,6 +39,7 @@ const Wrapper = styled.div`
     @media (max-width: 1020px){
         padding: 10px 50px 10px 30px;
         width: 85%;
+        min-width: 300px;
         margin: 10px auto;
     }
 `;

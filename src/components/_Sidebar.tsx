@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MemoryRouter as Router, Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import { sidebar_links } from "../utils/data";
 import styled from 'styled-components';
 
@@ -46,14 +46,15 @@ const Wrapper = styled.div`
     }
 `;
 
-export const SideBar = () => { 
+export const SideBar = (props: any) => { 
+    // const {active} = props;
     const [activeMenu, setActiveMenu] = useState();   
     return(
         <>
             <Wrapper>
                 <>
                     {sidebar_links.map((sidebar_link: any, index: any) => (
-                        <Link to={sidebar_link.path} key={index}  className={activeMenu === sidebar_link.name ? 'active' : ""} onClick={() => setActiveMenu(sidebar_link.name)}>
+                        <Link to={sidebar_link.path} key={index}  className={props.active === sidebar_link.name.toLowerCase() ? 'active' : ""} onClick={() => setActiveMenu(sidebar_link.name)}>
                             <div className='icon'>{sidebar_link.icon}</div>
                             <div className='name'>{sidebar_link.name}</div>
                         </Link>
