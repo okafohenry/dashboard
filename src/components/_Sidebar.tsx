@@ -54,7 +54,7 @@ export const SideBar = (props: any) => {
             <Wrapper>
                 <>
                     {sidebar_links.map((sidebar_link: any, index: any) => (
-                        <Link to={sidebar_link.path} key={index}  className={props.active === sidebar_link.name.toLowerCase() ? 'active' : ""} onClick={() => setActiveMenu(sidebar_link.name)}>
+                        <Link to={sidebar_link.path} key={index}  className={props.active === sidebar_link.name.toLowerCase() ? 'active' : ""} >
                             <div className='icon'>{sidebar_link.icon}</div>
                             <div className='name'>{sidebar_link.name}</div>
                         </Link>

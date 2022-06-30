@@ -4,6 +4,7 @@ import { IoClose } from 'react-icons/io5';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
+import { MobileNavbar } from '../mobileNavbar/MobileNavbar';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -56,6 +57,17 @@ const Wrapper = styled.div`
     }
 `;
 
+const showNav = {
+    position: 'absolute',
+    right: '0', 
+    top: '75px'
+}
+
+const hideNav = {
+    position: 'absolute', 
+    right: '-9999999999px'
+}
+
 
 
 export const DesktopNavbar = () => {
@@ -91,9 +103,10 @@ export const DesktopNavbar = () => {
                         </div>
                     </> :
                     <>
-                    {sideNavDisplay ? 
-                       <div className="fa-close" onClick={handleSideNavClose}><IoClose /></div> : <div className="fa-bars" onClick={handleSideNavDisplay}><FaBars /></div>
-                    }
+                        {sideNavDisplay ? 
+                        <div className="fa-close" onClick={handleSideNavClose}><IoClose /></div> : <div className="fa-bars" onClick={handleSideNavDisplay}><FaBars /></div>
+                        }                        
+                        <>{sideNavDisplay ?  <MobileNavbar /> : null }</>
                     </>
                 }
             </div>

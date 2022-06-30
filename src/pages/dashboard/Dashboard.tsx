@@ -6,6 +6,7 @@ import { AtmCardCarousel, Button, Card, Input, LineChart, PageLayout, Table } fr
 import { CurrencyFormatter } from "../../utils/currencyFormatter";
 import { dashboard_sections, card_balance, transactions, transfer_beneficiaries } from '../../utils/data';
 import { ChartSection, Wrapper, AtmSection, TransactionSection, QuickTransferSection } from "./DashboardStyle";
+import { Link } from "react-router-dom";
 
 
 export const Dashboard = () => {
@@ -72,7 +73,7 @@ export const Dashboard = () => {
                             <TransactionSection>
                                 <header className="transaction__header">
                                     <h3>Recent Transactions</h3>
-                                    <a href='#'>View all</a>
+                                    <Link to="/transaction">View all</Link>
                                 </header>
                                 <div className="transaction__body">
                                    { transactions ? <Table transactions={transactions} /> : <div className="no-transaction">No available transactions</div>}
