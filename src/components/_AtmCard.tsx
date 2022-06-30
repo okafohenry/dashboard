@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBCarouselElement,  } from 'mdb-react-ui-kit';
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem } from 'mdb-react-ui-kit';
 
 const Wrapper = styled.div`
     width: 100%;

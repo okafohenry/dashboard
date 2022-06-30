@@ -57,18 +57,6 @@ const Wrapper = styled.div`
     }
 `;
 
-const showNav = {
-    position: 'absolute',
-    right: '0', 
-    top: '75px'
-}
-
-const hideNav = {
-    position: 'absolute', 
-    right: '-9999999999px'
-}
-
-
 
 export const DesktopNavbar = () => {
     const [sideNavDisplay, setSideNavDisplay] = useState(false);

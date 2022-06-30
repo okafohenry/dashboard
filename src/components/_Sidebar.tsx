@@ -46,9 +46,7 @@ const Wrapper = styled.div`
     }
 `;
 
-export const SideBar = (props: any) => { 
-    // const {active} = props;
-    const [activeMenu, setActiveMenu] = useState();   
+export const SideBar = (props: any) => {   
     return(
         <>
             <Wrapper>
