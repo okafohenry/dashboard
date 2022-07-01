@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { AtmCardCarousel, Button, Card, Input, LineChart, PageLayout, Table } from "../../components";
 import { CurrencyFormatter } from "../../utils/currencyFormatter";
 import { dashboard_sections, card_balance, transactions, transfer_beneficiaries } from '../../utils/data';
-import { ChartSection, Wrapper, AtmSection, TransactionSection, QuickTransferSection } from "./DashboardStyle";
+import { ChartSection, Wrapper, AtmSection, TransactionSection, QuickTransferSection, CardRow } from "./DashboardStyle";
 import { Link } from "react-router-dom";
 
 
@@ -14,7 +14,7 @@ export const Dashboard = () => {
         <PageLayout active="dashboard"> 
             <Wrapper>
                 <Container>
-                    <Row className="financial_statistics-section">
+                    <CardRow>
                     {dashboard_sections.section_one.map((item: any, index: any) => (
                         <Col key={index} sm>
                             <Card 
@@ -25,7 +25,7 @@ export const Dashboard = () => {
                                 amount={item.amount} />
                         </Col>
                     ))}
-                    </Row>
+                    </CardRow>
                     <Row className="charts-section">
                         <Col lg={9} sm>
                             <ChartSection>

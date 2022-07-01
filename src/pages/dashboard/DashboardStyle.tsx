@@ -26,6 +26,18 @@ export const Wrapper = styled.div`
     
 `;
 
+export const CardRow = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+    overflow-x: auto;
+    :-webkit-scrollbar {
+        width: 2px !important;
+    }
+
+`;
+
 export const ChartSection = styled.div`
     background: #fff;
     padding: 1rem 1.5rem;
